@@ -1,6 +1,6 @@
 import React from 'react';
 import banner from '../../images/slider-2-1-removebg-preview.png'
-import background from '../../images/peter-gargiulo-cGNCepznaV8-unsplash.jpg'
+import background from '../../images/23964.jpg'
 const Banner = () => {
     return (
         <div style={{ background: `url(${background})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right' }} class="hero min-h-screen">
