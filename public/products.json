@@ -3,18 +3,54 @@
         "_id": 1,
         "name": "Brake Disc",
         "img": "https://i.ibb.co/d4T0vTD/Brake-Disc.png",
-        "description": "",
-        "orderQuantity": "100",
-        "availableQuantity": "900",
-        "Price": "29"
+        "description": "Disc and drum brakes are based on a hydraulic pressure system. Braking starts with a mechanical force your foot pressing the brake pedal. The end result is that your vehicle safely stops.",
+        "orderQuantity": "2000",
+        "availableQuantity": "15000",
+        "price": "40"
     },
     {
-        "_id": 1,
-        "name": "Brake Disc",
-        "img": "https://i.ibb.co/d4T0vTD/Brake-Disc.png",
-        "description": "",
-        "orderQuantity": "100",
-        "availableQuantity": "900",
-        "Price": "29"
+        "_id": 2,
+        "name": "DOE Replica Wheels",
+        "img": "https://i.ibb.co/gDtq5Rh/DOEReplica-Wheels.png",
+        "description": "Featuring a heavy-duty, one-piece cast aluminum construction, all Topline Replicas offer superior durability and performance to withstand harsh conditions on the road.",
+        "orderQuantity": "1200",
+        "availableQuantity": "11000",
+        "price": "25"
     },
+    {
+        "_id": 3,
+        "name": "Piston Rod Clevis",
+        "img": "https://i.ibb.co/QCyGtP6/Piston-Rod-Clevis.png",
+        "description": "This joint is made of durable iron, with good wear resistance, pressure resistance, and high strength. Cylinder clevis can be used as standard connections on pneumatic cylinders or gas spring connecting rods.",
+        "orderQuantity": "800",
+        "availableQuantity": "9000",
+        "price": "29"
+    },
+    {
+        "_id": 4,
+        "name": "Steam Engine",
+        "img": "https://i.ibb.co/FYkPnFq/Steam-Engine-Model.png",
+        "description": "This joint is made of durable iron, with good wear resistance, pressure resistance, and high strength. Cylinder clevis can be used as standard connections on pneumatic cylinders or gas spring connecting rods.",
+        "orderQuantity": "1000",
+        "availableQuantity": "14000",
+        "price": "30"
+    },
+    {
+        "_id": 5,
+        "name": "Silent Block Bushes",
+        "img": "https://i.ibb.co/2k3STb2/Silent-Block-Bushes.png",
+        "description": "This joint is made of durable iron, with good wear resistance, pressure resistance, and high strength. Cylinder clevis can be used as standard connections on pneumatic cylinders or gas spring connecting rods.",
+        "orderQuantity": "1000",
+        "availableQuantity": "12000",
+        "price": "32"
+    },
+    {
+        "_id": 6,
+        "name": "Steering Wheel Cover",
+        "img": "https://i.ibb.co/PZ8TWCY/Steering-Wheel-Cover.png",
+        "description": "PROTECTS YOUR STEERING WHEEL FROM CRACKING AND PEELING – Nobody likes driving with an old, worn-out steering wheel. Our durable steering wheel cover provides protection against fading.",
+        "orderQuantity": "800",
+        "availableQuantity": "15000",
+        "price": "35"
+    }
 ]
