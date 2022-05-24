@@ -3,11 +3,12 @@ import customer from '../../images/icon/customers-58.png'
 import revenue from '../../images/icon/revenue-64.png'
 import review from '../../images/icon/reviews-64.png'
 import tolls from '../../images/icon/parts-64.png'
+import background from '../../images/background.jpg'
 const BusinessSummary = () => {
     return (
-        <div className='flex justify-center flex-col mb-20'>
+        <div style={{ background: `url(${background})` }} className='flex justify-center flex-col mb-20'>
             <div>
-                <h1 className='text-primary text-4xl text-center mb-6 hover:underline-offset-4'>MILLIONS BUSINESS TRUST US</h1>
+                <h1 className='text-primary text-4xl text-center mb-6 mt-5'>MILLIONS BUSINESS TRUST US</h1>
 
             </div>
             <div className="stats stats-vertical lg:stats-horizontal md:stats-horizontal shadow text">
