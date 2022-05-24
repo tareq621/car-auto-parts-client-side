@@ -19,7 +19,7 @@ const Navbar = () => {
                         {menubar}
                     </ul>
                 </div>
-                <a class="font-bold hover:text-white normal-case text-xl ml-5">Auto Parts</a>
+                <a class="font-bold hover:text-white normal-case text-4xl ml-5">Auto Parts</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
