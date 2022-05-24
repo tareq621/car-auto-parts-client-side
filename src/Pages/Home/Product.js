@@ -3,11 +3,11 @@ import React from 'react';
 const Product = ({ product }) => {
     const { name, img, price, availableQuantity, orderQuantity, description } = product;
     return (
-        <div class="card w-96 bg-base-100 shadow-xl">
-            <figure class="px-10 pt-10">
-                <img src={img} alt="" class="rounded-xl" />
+        <div className="card w-96 bg-base-100 shadow-xl">
+            <figure className="px-10 pt-10">
+                <img src={img} alt="" className="rounded-xl" />
             </figure>
-            <div class="card-body pt-2">
+            <div className="card-body pt-2">
                 <div className='flex justify-between'>
                     <h4 className='text-xl font-bold'>{name}</h4>
                     <h6 className='text-md text-primary font-bold'>Per Price <span className='text-primary'>${price}</span></h6>
@@ -18,7 +18,7 @@ const Product = ({ product }) => {
                 </div>
                 <p>{description}</p>
                 <div className='mt-2'>
-                    <button class="btn btn-primary hover:text-white">Purchase</button>
+                    <button className="btn btn-primary hover:text-white">Purchase</button>
                 </div>
             </div>
         </div>
