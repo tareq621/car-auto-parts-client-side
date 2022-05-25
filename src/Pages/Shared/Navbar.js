@@ -1,13 +1,20 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+    };
+
     const menubar = <>
         <li><Link to="/home" className='font-bold hover:text-white'>Home</Link></li>
-        <li><a className='font-bold hover:text-white'>Shop</a></li>
-        <li><a className='font-bold hover:text-white'>Blog</a></li>
-        <li><a className='font-bold hover:text-white' >About</a></li>
-        <li><a className='font-bold hover:text-white' >Contact Us</a></li>
+        <li><Link to="/blog" className='font-bold hover:text-white'>Manage Products</Link></li>
+        <li><Link to="/portfolio" className='font-bold hover:text-white' >My Portfolio</Link></li>
+        <li><Link to="/dashboard" className='font-bold hover:text-white' >Dashboard</Link></li>
     </>
     return (
         <div className="navbar bg-primary">
@@ -28,8 +35,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/signup" className="font-bold mr-2 btn btn-ghost">Register</Link>
-                <Link to="/login" className="font-bold mr-5 btn btn-ghost">Login</Link>
+
+                <Link to="/signup" className="hover:text-white font-bold mr-2 btn btn-ghost">Register</Link>
+
+                {
+                    user
+                        ?
+                        <button className="font-bold mr-5 btn btn-ghost hover:text-white" onClick={logout}>Sign Out</button>
+                        :
+                        <Link to="/login" className="font-bold mr-5 btn btn-ghost">Login</Link>}
             </div>
         </div>
     );
