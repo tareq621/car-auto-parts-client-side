@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const menubar = <>
-        <li><a className='font-bold hover:text-white'>Home</a></li>
+        <li><Link to="/home" className='font-bold hover:text-white'>Home</Link></li>
         <li><a className='font-bold hover:text-white'>Shop</a></li>
         <li><a className='font-bold hover:text-white'>Blog</a></li>
         <li><a className='font-bold hover:text-white' >About</a></li>
@@ -19,7 +20,7 @@ const Navbar = () => {
                         {menubar}
                     </ul>
                 </div>
-                <a className="font-bold hover:text-white normal-case text-4xl ml-5">Auto Parts</a>
+                <Link to="/" className="font-bold hover:text-white normal-case text-4xl ml-5">Auto Parts</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -27,8 +28,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="font-bold mr-2 btn btn-ghost">Register</a>
-                <a className="font-bold mr-5 btn btn-ghost">Login</a>
+                <Link to="/signup" className="font-bold mr-2 btn btn-ghost">Register</Link>
+                <Link to="/login" className="font-bold mr-5 btn btn-ghost">Login</Link>
             </div>
         </div>
     );
