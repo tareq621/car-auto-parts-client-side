@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 
 const AddReview = () => {
     const { register, handleSubmit } = useForm();
@@ -16,14 +17,14 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log('post done', result);
+                toast.success('Add Review successfully', result);
             })
 
     };
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className='ml-28' onSubmit={handleSubmit(onSubmit)}>
 
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
@@ -33,7 +34,7 @@ const AddReview = () => {
                         type="text"
                         placeholder="name"
                         {...register("name", { required: true })}
-                        class="input input-bordered w-full max-w-xs" />
+                        class="input input-bordered w-full max-w-xs" required />
                 </div>
 
                 <div class="form-control w-28 max-w-xs">
