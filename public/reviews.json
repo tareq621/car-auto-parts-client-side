@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Arif Azad",
+        "ratings": "4.5",
+        "review": "Part arrived so fast. Perfect fit and runs smoothly and quietly. Very happy with price and seller. Will shop again. Thank you."
+    },
+    {
+        "id": 2,
+        "name": "Arif Azad",
+        "ratings": "4.9",
+        "review": "The product itself is fine if you don't get confused by the lack of description. I thought bore size was the diameter of the linear actuator stroke piston, but I guess it actually refers to the height of the entire thing."
+    },
+    {
+        "id": 3,
+        "name": "Saiful",
+        "ratings": "5",
+        "review": "I am happy I bought this steering wheel cover. It has helped give my interior a sporty look. The cover also doesn't soak up any rays from the sun so my steering wheel stay comfortable to the touch...even on extremely hot days."
+    }
+]

@@ -31,6 +31,23 @@ const Purchase = () => {
             productName: event.target.productName.value,
             quantity: event.target.quantity.value
         };
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast('Your order is booked!!!')
+                    event.target.reset();
+                }
+            })
+
+
+
         axios.post('http://localhost:5000/order', order)
             .then(response => {
                 const { data } = response;
