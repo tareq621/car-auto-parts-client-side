@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
-const MyProfile = () => {
+const UpdateProfile = () => {
     const [user] = useAuthState(auth);
-    const navigate = useNavigate();
-
-    console.log(user);
-
-    const handleSubmit = event => {
+    const { id } = useParams();
+    console.log(id);
+    const handleUpdateProfile = event => {
         event.preventDefault();
-        const profile = {
+        const updateProfile = {
             id: user._id,
             name: user.name,
             email: user.email,
@@ -21,13 +19,13 @@ const MyProfile = () => {
             education: event.target.education.value,
             phoneNumber: event.target.phoneNumber.value
         };
-
-        fetch('http://localhost:5000/profile', {
-            method: 'POST',
+        const url = `http://localhost:5000/profile/${id}`;
+        fetch(url, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(profile)
+            body: JSON.stringify(updateProfile)
         })
             .then(res => res.json())
             .then(inserted => {
@@ -42,9 +40,8 @@ const MyProfile = () => {
     }
 
     return (
-
         <div>
-            <form onSubmit={handleSubmit} class="w-full max-w-lg mt-10">
+            <form onSubmit={handleUpdateProfile} class="w-full max-w-lg mt-10">
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -88,17 +85,11 @@ const MyProfile = () => {
                     </div>
                 </div>
                 <div className='flex justify-center mt-3 px-18'>
-                    <input type="submit" value="SAVE" class="btn btn-primary ml-18 px-28" />
+                    <input type="submit" value="UPDATE" class="btn btn-primary ml-18 px-28" />
                 </div>
             </form>
-            <Link to={`/updateProfile/profile/${user.id}`}>
-                <div className='flex justify-center mt-3 px-18'>
-                    <input type="submit" value="UPDATE PROFILE" onClick={() => navigate("/profile._id")} class="btn btn-primary -ml-1 px-28" />
-                </div>
-            </Link>
         </div>
-
     );
 };
 
-export default MyProfile;
+export default UpdateProfile;

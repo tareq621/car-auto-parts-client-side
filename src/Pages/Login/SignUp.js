@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 
 const SignUp = () => {
@@ -16,7 +17,7 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
-
+    const [token] = useToken(user);
     let errorMessage;
 
 
@@ -29,15 +30,13 @@ const SignUp = () => {
         errorMessage = <p className='text-red-500'>{error?.message}</p>
     }
 
-    if (user) {
-        console.log(user);
+    if (token) {
+        navigate('/');
     }
 
     const onSubmit = data => {
         createUserWithEmailAndPassword(data.email, data.password)
         updateProfile('updated')
-        navigate('/');
-        console.log(data)
     };
     return (
         <div className='h-screen flex justify-center items-center'>
