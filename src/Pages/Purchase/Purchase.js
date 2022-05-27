@@ -10,7 +10,7 @@ import Loading from '../Shared/Loading';
 const Purchase = () => {
     const [user, loading] = useAuthState(auth);
     const { purchaseId } = useParams();
-    const [purchase, setPurchase] = useState({});   
+    const [purchase, setPurchase] = useState({});
 
     useEffect(() => {
         fetch(`http://localhost:5000/purchase/${purchaseId}`)
@@ -25,7 +25,7 @@ const Purchase = () => {
         event.preventDefault();
         const order = {
             email: user.email,
-            service: user.name,
+            name: user.displayName,
             address: event.target.address.value,
             phone: event.target.phone.value,
             productName: event.target.productName.value,
@@ -40,17 +40,6 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
-                    toast('Your order is booked!!!')
-                    event.target.reset();
-                }
-            })
-
-
-
-        axios.post('http://localhost:5000/order', order)
-            .then(response => {
-                const { data } = response;
                 if (data.insertedId) {
                     toast('Your order is booked!!!')
                     event.target.reset();
