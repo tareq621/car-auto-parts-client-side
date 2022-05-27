@@ -16,8 +16,13 @@ const AddReview = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(result => {
-                toast.success('Add Review successfully', result);
+            .then(data => {
+                if (data.success) {
+                    toast.success('Add Review successfully', data);
+                }
+                else {
+                    toast.error('Failed now add review')
+                }
             })
 
     };

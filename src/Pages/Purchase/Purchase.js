@@ -10,7 +10,7 @@ import Loading from '../Shared/Loading';
 const Purchase = () => {
     const [user, loading] = useAuthState(auth);
     const { purchaseId } = useParams();
-    const [purchase, setPurchase] = useState({});
+    const [purchase, setPurchase] = useState({});   
 
     useEffect(() => {
         fetch(`http://localhost:5000/purchase/${purchaseId}`)

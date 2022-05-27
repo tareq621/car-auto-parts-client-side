@@ -7,7 +7,8 @@ const AddParts = () => {
 
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/purchase', {
+        const url = `http://localhost:5000/purchase`;
+        fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -17,6 +18,7 @@ const AddParts = () => {
             .then(res => res.json())
             .then(result => {
                 toast.success('New Parts Add successfully', result);
+
             })
     };
 
