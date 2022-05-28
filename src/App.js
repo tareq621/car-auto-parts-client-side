@@ -18,6 +18,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import AddReview from './Pages/Dashboard/AddReview';
 import AddParts from './Pages/Dashboard/AddParts';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
           <Route path='profile/:id' element={<UpdateProfile></UpdateProfile>}></Route>
           <Route path='addParts' element={<AddParts></AddParts>}></Route>
+          <Route path='users' element={<MakeAdmin></MakeAdmin>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
