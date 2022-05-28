@@ -10,7 +10,7 @@ const OrderRow = ({ order }) => {
             <th>{phone}</th>
             <th>{quantity}</th>
             <td>
-                <button class="btn btn-xs">Cancel</button>
+                <button className="btn btn-xs">Cancel</button>
             </td>
         </tr>
     );

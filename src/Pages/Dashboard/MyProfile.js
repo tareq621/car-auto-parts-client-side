@@ -8,8 +8,6 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
-    console.log(user);
-
     const handleSubmit = event => {
         event.preventDefault();
         const profile = {
@@ -22,7 +20,7 @@ const MyProfile = () => {
             phoneNumber: event.target.phoneNumber.value
         };
 
-        fetch('http://localhost:5000/profile', {
+        fetch('https://guarded-brook-34447.herokuapp.com/profile', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,59 +42,59 @@ const MyProfile = () => {
     return (
 
         <div>
-            <form onSubmit={handleSubmit} class="w-full max-w-lg mt-10">
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+            <form onSubmit={handleSubmit} className="w-full max-w-lg mt-10">
+                <div className="flex flex-wrap -mx-3 mb-6">
+                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
                             Name
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name='name' value={user.displayName} />
+                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name='name' value={user.displayName} />
                     </div>
-                    <div class="w-full md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                    <div className="w-full md:w-1/2 px-3">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                             Email
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email" name='email' value={user.email} readOnly disabled />
+                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email" name='email' value={user.email} readOnly disabled />
                     </div>
                 </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                <div className="flex flex-wrap -mx-3 mb-6">
+                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                             City/District
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name='city' placeholder='City' />
+                        <input className="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name='city' placeholder='City' />
                     </div>
-                    <div class="w-full md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                    <div className="w-full md:w-1/2 px-3">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                             ZIP
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="tel" name='zip' placeholder='Code' />
+                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="tel" name='zip' placeholder='Code' />
                     </div>
                 </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                <div className="flex flex-wrap -mx-3 mb-6">
+                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                             Education
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name='education' placeholder='Education' />
+                        <input className="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name='education' placeholder='Education' />
                     </div>
-                    <div class="w-full md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                    <div className="w-full md:w-1/2 px-3">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                             Phone Number
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name='phoneNumber' placeholder='+880' />
+                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" name='phoneNumber' placeholder='+880' />
                     </div>
                 </div>
                 <div className='flex justify-center mt-3 px-18'>
-                    <input type="submit" value="SAVE" class="btn btn-primary ml-18 px-28" />
+                    <input type="submit" value="SAVE" className="btn btn-primary ml-18 px-28" />
                 </div>
-            </form>
+            </form >
             <Link to={`/updateProfile/profile/${user.id}`}>
                 <div className='flex justify-center mt-3 px-18'>
-                    <input type="submit" value="UPDATE PROFILE" onClick={() => navigate("/profile._id")} class="btn btn-primary -ml-1 px-28" />
+                    <input type="submit" value="UPDATE PROFILE" onClick={() => navigate("/profile._id")} className="btn btn-primary -ml-1 px-28" />
                 </div>
             </Link>
-        </div>
+        </div >
 
     );
 };

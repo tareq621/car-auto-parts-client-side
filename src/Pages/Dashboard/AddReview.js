@@ -7,7 +7,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/review`;
+        const url = `https://guarded-brook-34447.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -31,24 +31,24 @@ const AddReview = () => {
         <div>
             <form className='ml-28' onSubmit={handleSubmit(onSubmit)}>
 
-                <div class="form-control w-full max-w-xs">
-                    <label class="label">
-                        <span class="label-text">Name</span>
+                <div className="form-control w-full max-w-xs">
+                    <label className="label">
+                        <span className="label-text">Name</span>
                     </label>
                     <input
                         type="text"
                         placeholder="name"
                         {...register("name", { required: true })}
-                        class="input input-bordered w-full max-w-xs" required />
+                        className="input input-bordered w-full max-w-xs" required />
                 </div>
 
-                <div class="form-control w-28 max-w-xs">
-                    <label class="label">
-                        <span class="label-text">Rate</span>
+                <div className="form-control w-28 max-w-xs">
+                    <label className="label">
+                        <span className="label-text">Rate</span>
                     </label>
                     <select
                         {...register("ratings", { required: true })}
-                        class="select select-bordered">
+                        className="select select-bordered">
                         <option disabled selected>Rating</option>
                         <option>1</option>
                         <option>2</option>
@@ -58,16 +58,16 @@ const AddReview = () => {
                     </select>
                 </div>
 
-                <div class="form-control">
-                    <label class="label">
-                        <span class="label-text">Review</span>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Review</span>
                     </label>
                     <textarea
                         {...register("review", { required: true, maxLength: 200 })}
-                        class="textarea textarea-bordered h-24 w-full max-w-xs" placeholder="Bio"></textarea>
+                        className="textarea textarea-bordered h-24 w-full max-w-xs" placeholder="Bio"></textarea>
                 </div>
                 <div className='flex justify-start mt-3'>
-                    <input type="submit" value="Add Review" class="btn btn-outline btn-primary ml-18" />
+                    <input type="submit" value="Add Review" className="btn btn-outline btn-primary ml-18" />
                 </div>
             </form>
 

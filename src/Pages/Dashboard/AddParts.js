@@ -7,7 +7,7 @@ const AddParts = () => {
 
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/purchase`;
+        const url = `https://guarded-brook-34447.herokuapp.com/purchase`;
         fetch(url, {
             method: 'POST',
             headers: {
