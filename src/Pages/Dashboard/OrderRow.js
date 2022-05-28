@@ -1,13 +1,13 @@
 import React from 'react';
 
-const OrderRow = ({ user }) => {
-    const { productName, name, address, quantity } = user;
+const OrderRow = ({ order }) => {
+    const { productName, phone, address, quantity } = order;
     return (
-        <tr className='active'>
+        <tr>
             <th>1</th>
             <th>{productName}</th>
-            <th>{name}</th>
             <th>{address}</th>
+            <th>{phone}</th>
             <th>{quantity}</th>
             <td>
                 <button class="btn btn-xs">Cancel</button>
