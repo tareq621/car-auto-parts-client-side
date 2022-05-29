@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useProducts from '../../hooks/useProducts';
+import DeleteModal from './DeleteModal';
 import ManageProductsRow from './ManageProductsRow';
 
 const ManageProducts = () => {
-    const [products] = useProducts();
+    const [deletedProducts, setDeletedProducts] = useState(null);
+    const [products, setProducts] = useProducts();
 
     return (
         <div>
@@ -23,11 +25,22 @@ const ManageProducts = () => {
                             products.map(product => <ManageProductsRow
                                 key={product._id}
                                 product={product}
+                                products={products}
+                                setProducts={setProducts}
+                                setDeletedProducts={setDeletedProducts}
                             ></ManageProductsRow>)
                         }
                     </tbody>
                 </table>
             </div>
+            {
+                deletedProducts && <DeleteModal
+                    deletedProducts={deletedProducts}
+                    setDeletedProducts={setDeletedProducts}
+                    products={products}
+                    setProducts={setProducts}
+                ></DeleteModal>
+            }
         </div>
     );
 };

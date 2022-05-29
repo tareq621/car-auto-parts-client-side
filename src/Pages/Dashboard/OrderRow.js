@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const OrderRow = ({ order, orders, refetch, setOrders }) => {
+const OrderRow = ({ order, orders, setOrders }) => {
     const { productName, phone, address, quantity } = order;
 
     const handleDelete = id => {
