@@ -14,6 +14,7 @@ const Navbar = () => {
     const menubar = <>
         <li><Link to="/home" className='font-bold hover:text-white'>Home</Link></li>
         <li><Link to="/blog" className='font-bold hover:text-white'>Blog</Link></li>
+        <li><Link to="/portfolio" className='font-bold hover:text-white'>My Portfolio</Link></li>
         {
             user && <li><Link to="/dashboard" className='font-bold hover:text-white' >Dashboard</Link></li>
         }
@@ -37,7 +38,7 @@ const Navbar = () => {
                         {menubar}
                     </ul>
                 </div>
-                <Link to="/" className="font-bold hover:text-white text-secondary normal-case text-3xl ml-5">Auto Parts</Link>
+                <Link to="/" className="font-bold hover:text-white normal-case text-3xl ml-5">Auto Parts</Link>
             </div>
 
             <div className="navbar-center hidden lg:flex">
