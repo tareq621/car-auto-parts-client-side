@@ -89,11 +89,6 @@ const MyProfile = () => {
                     <input type="submit" value="SAVE" className="btn btn-primary ml-18 px-28" />
                 </div>
             </form >
-            <Link to={`/updateProfile/profile/${user.id}`}>
-                <div className='flex justify-center mt-3 px-18'>
-                    <input type="submit" value="UPDATE PROFILE" onClick={() => navigate("/profile._id")} className="btn btn-primary -ml-1 px-28" />
-                </div>
-            </Link>
         </div >
 
     );
