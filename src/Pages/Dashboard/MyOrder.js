@@ -31,7 +31,7 @@ const MyOrder = () => {
                     setOrders(data)
                 })
         }
-    }, [])
+    }, [user, navigate])
 
     if (loading) {
         return <Loading></Loading>
