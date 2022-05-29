@@ -12,7 +12,7 @@ const Reviews = () => {
         <div>
             <div className='flex justify-center items-center mb-4'>
                 <img src={customerReview} alt="" />
-                <h2 className='text-primary text-3xl mb-4 font-semibold'>Customer Reviews</h2>
+                <h2 className='text-primary text-3xl mb-4 font-semibold'>Our Client Say</h2>
             </div>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-12'>
                 {

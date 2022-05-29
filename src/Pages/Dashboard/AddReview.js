@@ -17,7 +17,8 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.success) {
+                console.log(data);
+                if (data.insertedId) {
                     toast.success('Add Review successfully', data);
                 }
                 else {
