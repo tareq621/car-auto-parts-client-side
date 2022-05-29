@@ -1,7 +1,27 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
-const OrderRow = ({ order }) => {
+const OrderRow = ({ order, orders, refetch, setOrders }) => {
     const { productName, phone, address, quantity } = order;
+
+    const handleDelete = id => {
+        fetch(`https://guarded-brook-34447.herokuapp.com/order/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    const remaining = orders.filter(order => order._id !== id)
+                    setOrders(remaining);
+                    toast.success('Order cancel');
+                }
+            })
+    }
+
+
     return (
         <tr>
             <th>1</th>
@@ -10,7 +30,7 @@ const OrderRow = ({ order }) => {
             <th>{phone}</th>
             <th>{quantity}</th>
             <td>
-                <button className="btn btn-xs">Cancel</button>
+                <button onClick={() => handleDelete(order._id)} className="btn btn-xs">Cancel</button>
             </td>
         </tr>
     );
