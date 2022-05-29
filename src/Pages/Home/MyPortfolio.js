@@ -82,10 +82,10 @@ const MyPortfolio = () => {
                     technologies.map(technology =>
                         <div
                             key={technology.id}
-                            class="bg-base-100">
+                            className="bg-base-100">
                             <img className='w-4/12' src={technology.image} alt="" />
-                            <div class="">
-                                <h2 class="card-title">{technology.name}</h2>
+                            <div className="">
+                                <h2 className="card-title">{technology.name}</h2>
                             </div>
                         </div>
 
