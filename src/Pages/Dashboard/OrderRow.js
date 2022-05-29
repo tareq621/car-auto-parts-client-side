@@ -30,7 +30,7 @@ const OrderRow = ({ order, orders, refetch, setOrders }) => {
             <th>{phone}</th>
             <th>{quantity}</th>
             <td>
-                <button onClick={() => handleDelete(order._id)} className="btn btn-xs">Cancel</button>
+                <button onClick={() => handleDelete(order._id)} className="btn btn-xs text-white">Cancel</button>
             </td>
         </tr>
     );
