@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 
 const AddReview = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         console.log(data);
@@ -20,6 +20,7 @@ const AddReview = () => {
                 console.log(data);
                 if (data.insertedId) {
                     toast.success('Add Review successfully', data);
+                    reset();
                 }
                 else {
                     toast.error('Failed now add review')
@@ -65,7 +66,7 @@ const AddReview = () => {
                     </label>
                     <textarea
                         {...register("review", { required: true, maxLength: 200 })}
-                        className="textarea textarea-bordered h-24 w-full max-w-xs" placeholder="Bio"></textarea>
+                        className="textarea textarea-bordered h-40 w-full max-w-xs" placeholder="Bio"></textarea>
                 </div>
                 <div className='flex justify-start mt-3'>
                     <input type="submit" value="Add Review" className="btn btn-outline btn-primary ml-18" />

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 const AddParts = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         console.log(data)
@@ -18,6 +18,7 @@ const AddParts = () => {
             .then(res => res.json())
             .then(result => {
                 toast.success('New Parts Add successfully', result);
+                reset();
             })
     };
 
