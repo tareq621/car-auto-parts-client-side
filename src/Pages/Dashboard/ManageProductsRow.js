@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const ManageProductsRow = ({ product, setDeletedProducts }) => {
-    const { _id, name, img, price, availableQuantity
+    const { name, productName, img, price, availableQuantity
     } = product;
 
 
@@ -16,10 +16,10 @@ const ManageProductsRow = ({ product, setDeletedProducts }) => {
                 </div>
             </th>
             <th>{name}</th>
-            <td>{price}</td>
+            <td><span className='text-primary'>${price}</span></td>
             <td>{availableQuantity}</td>
             <td>
-                <label onClick={() => setDeletedProducts(product)} for="my-modal-6" class="btn btn-xs btn-error tiny text-white">Delete</label>
+                <label onClick={() => setDeletedProducts(product)} for="my-modal-6" className="btn btn-xs btn-error tiny text-white">Delete</label>
             </td>
         </tr>
     );

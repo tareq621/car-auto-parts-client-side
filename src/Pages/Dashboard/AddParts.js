@@ -35,7 +35,7 @@ const AddParts = () => {
                             type="text"
                             placeholder="Product Name"
                             className="input input-bordered w-3/6 max-w-xl"
-                            {...register("productName", {
+                            {...register("name", {
                                 required: {
                                     value: true,
                                     message: 'Product is required'

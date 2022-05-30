@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -16,17 +16,20 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
-    const [token] = useToken(user);
+    const [token] = useToken(user || gUser);
     let errorMessage;
 
 
 
-    if (loading || updating) {
+    if (loading || updating || gLoading) {
         return <Loading></Loading>
     }
 
-    if (error || uError) {
+    if (error || uError || gError) {
         errorMessage = <p className='text-red-500'>{error?.message}</p>
     }
 
@@ -125,6 +128,8 @@ const SignUp = () => {
                     </form>
                     <p>Already have an account? <Link className='text-secondary' to="/login">Login here</Link></p>
                 </div>
+                <div className="divider">OR</div>
+                <button className="btn btn-primary hover:text-white" onClick={() => signInWithGoogle()}>Continue with Google</button>
             </div>
         </div>
     );

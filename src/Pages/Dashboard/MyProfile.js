@@ -30,7 +30,7 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(inserted => {
                 if (inserted.insertedId) {
-                    toast.success('Doctor added successfully')
+                    toast.success('Added successfully')
                     event.target.reset();
                 }
                 else {

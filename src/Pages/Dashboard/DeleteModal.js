@@ -28,13 +28,13 @@ const DeleteModal = ({ deletedProducts, setDeletedProducts, products, setProduct
 
     return (
         <div>
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg text-red-500">Are you sure you wanna delete this?</h3>
-                    <div class="modal-action">
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg text-red-500">Are you sure you wanna delete this?</h3>
+                    <div className="modal-action">
                         <button onClick={() => handleDelete(_id)} className='btn btn-xs btn-error tiny text-white'>Delete</button>
-                        <label for="my-modal-6" class="btn btn-xs tiny text-white">Cancel</label>
+                        <label for="my-modal-6" className="btn btn-xs tiny text-white">Cancel</label>
                     </div>
                 </div>
             </div>
