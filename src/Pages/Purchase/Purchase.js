@@ -13,7 +13,7 @@ const Purchase = () => {
     const [purchase, setPurchase] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purchase/${purchaseId}`)
+        fetch(`https://guarded-brook-34447.herokuapp.com/purchase/${purchaseId}`)
             .then(res => res.json())
             .then(data => setPurchase(data))
     }, [purchaseId])
@@ -31,7 +31,7 @@ const Purchase = () => {
             productName: event.target.productName.value,
             quantity: event.target.quantity.value
         };
-        fetch('http://localhost:5000/order', {
+        fetch('https://guarded-brook-34447.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
