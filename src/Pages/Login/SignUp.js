@@ -39,7 +39,7 @@ const SignUp = () => {
 
     const onSubmit = data => {
         createUserWithEmailAndPassword(data.email, data.password)
-        updateProfile('updated')
+        updateProfile('update')
     };
     return (
         <div className='h-screen flex justify-center items-center'>
